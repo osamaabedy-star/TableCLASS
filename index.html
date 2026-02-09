@@ -1,0 +1,2472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>🎯 مسابقة الأوائل في الضرب والقسمة | مدارس رياض الإبداع</title>
+    <meta name="description" content="مسابقة تفاعلية لتعلم جداول الضرب والقسمة للطلاب. سجل درجاتك، احصل على شهادة تقدير من مدارس رياض الإبداع!">
+    <meta name="keywords" content="جدول الضرب, جدول القسمة, مسابقة رياضيات, تعليم الرياضيات, مدارس رياض الإبداع, تعليم الضرب, تعليم القسمة">
+    <meta name="author" content="مدارس رياض الإبداع">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4361ee">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.css">
+    <style>
+        /* ===== المتغيرات والأساسيات ===== */
+        :root {
+            --primary: #1a5f7a;
+            --primary-light: #2a7f9a;
+            --primary-dark: #0a4f6a;
+            --secondary: #57cc99;
+            --secondary-light: #77ecb9;
+            --secondary-dark: #37ac79;
+            --accent: #ff9e00;
+            --accent-light: #ffb347;
+            --accent-dark: #e08700;
+            --danger: #ff6b6b;
+            --danger-light: #ff8b8b;
+            --danger-dark: #e04b4b;
+            --warning: #ffd166;
+            --warning-light: #ffe08c;
+            --warning-dark: #e6b850;
+            --success: #38b000;
+            --success-light: #58d020;
+            --success-dark: #189000;
+            --light: #f8f9fa;
+            --light-2: #e9ecef;
+            --light-3: #dee2e6;
+            --dark: #2d3436;
+            --dark-2: #495057;
+            --dark-3: #6c757d;
+            --white: #ffffff;
+            --black: #000000;
+            --card-bg: #ffffff;
+            --body-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow: 0 8px 24px rgba(0,0,0,0.1);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.15);
+            --shadow-inset: inset 0 2px 4px rgba(0,0,0,0.05);
+            --radius-sm: 8px;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --gold: #D4AF37;
+            --gold-light: #F4E4A6;
+            --gold-dark: #B8860B;
+            --silver: #C0C0C0;
+            --bronze: #CD7F32;
+            --certificate-bg: #fffef7;
+            --certificate-border: #1a5f7a;
+        }
+        
+        /* الوضع الليلي */
+        .dark-mode {
+            --primary: #2a7f9a;
+            --primary-light: #3a9fba;
+            --primary-dark: #1a5f7a;
+            --secondary: #77ecb9;
+            --secondary-light: #97ffd9;
+            --secondary-dark: #57cc99;
+            --accent: #ffb347;
+            --accent-light: #ffcc7a;
+            --accent-dark: #ff9e00;
+            --danger: #ff8b8b;
+            --danger-light: #ffabab;
+            --danger-dark: #ff6b6b;
+            --warning: #ffe08c;
+            --warning-light: #fff0c2;
+            --warning-dark: #ffd166;
+            --success: #58d020;
+            --success-light: #78f040;
+            --success-dark: #38b000;
+            --light: #1e293b;
+            --light-2: #2d3748;
+            --light-3: #374151;
+            --dark: #f1f5f9;
+            --dark-2: #e2e8f0;
+            --dark-3: #cbd5e1;
+            --white: #0f172a;
+            --black: #f8fafc;
+            --card-bg: #1e293b;
+            --body-bg: #0f172a;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow: 0 8px 24px rgba(0,0,0,0.4);
+            --shadow-lg: 0 16px 40px rgba(0,0,0,0.5);
+            --shadow-inset: inset 0 2px 4px rgba(0,0,0,0.2);
+            --gold: #f4e4a6;
+            --gold-light: #fff8dc;
+            --gold-dark: #d4af37;
+            --certificate-bg: #1a1a2e;
+            --certificate-border: #1a5f7a;
+        }
+        
+        /* ===== إعادة الضبط والأساسيات ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        html {
+            font-size: 16px;
+            height: 100%;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            background: var(--body-bg);
+            color: var(--dark);
+            min-height: 100vh;
+            transition: var(--transition);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* ===== الإخفاء والظهور ===== */
+        .hidden {
+            display: none !important;
+        }
+        
+        .visible {
+            display: block !important;
+        }
+        
+        .screen {
+            display: none;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 700px;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .screen.active {
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ===== شعار مدارس رياض الإبداع ===== */
+        .school-logo {
+            text-align: center;
+            padding: 15px 0;
+            background: var(--white);
+            border-bottom: 2px solid var(--light-2);
+        }
+        
+        .school-logo img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        .school-logo h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .school-logo p {
+            color: var(--dark-3);
+            font-size: 1rem;
+        }
+        
+        /* ===== حاوية المحتوى الرئيسية ===== */
+        .content-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* ===== زر تبديل الثيم ===== */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-full);
+            background: var(--white);
+            border: 2px solid var(--light-2);
+            color: var(--dark);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.05);
+        }
+        
+        .dark-mode .theme-toggle {
+            background: var(--light-2);
+            border-color: var(--light-3);
+            color: var(--dark);
+        }
+        
+        /* ===== شاشة الإعدادات ===== */
+        .setup-header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--light-2);
+        }
+        
+        .setup-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .setup-content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 10px;
+        }
+        
+        @media (max-width: 992px) {
+            .setup-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .settings-section {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            border-right: 4px solid var(--primary);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .section-header i {
+            font-size: 1.3rem;
+        }
+        
+        .section-header h3 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        
+        .setting-group {
+            margin-bottom: 25px;
+        }
+        
+        .setting-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--light-3);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--dark);
+            transition: var(--transition);
+            font-family: var(--font-family);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.15);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Slider مخصص */
+        .slider-container {
+            position: relative;
+            margin-top: 15px;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: var(--light-3);
+            border-radius: var(--radius-full);
+            outline: none;
+            margin: 15px 0;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: var(--radius-full);
+            background: var(--primary);
+            cursor: pointer;
+            border: 3px solid var(--white);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .slider-value {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        /* أزرار الدرجات */
+        .points-control {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .point-btn {
+            flex: 1;
+            padding: 15px 5px;
+            background: var(--white);
+            border: 2px solid var(--light-3);
+            border-radius: var(--radius);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .point-btn:hover,
+        .point-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        
+        /* الجداول */
+        .tables-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .table-btn {
+            padding: 20px 5px;
+            background: var(--white);
+            border: 2px solid var(--light-3);
+            border-radius: var(--radius);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+        
+        .table-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .table-btn.selected {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(26, 95, 122, 0.3);
+        }
+        
+        /* أزرار التحكم في الجداول */
+        .table-controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .control-btn {
+            padding: 16px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .control-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .control-btn.select-all {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        
+        .control-btn.deselect-all {
+            background: var(--danger);
+            color: var(--white);
+        }
+        
+        /* مربع المعلومات */
+        .info-box {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 20px;
+            border-right: 3px solid var(--primary);
+        }
+        
+        .info-box p {
+            font-size: 0.95rem;
+            color: var(--dark-3);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        /* أزرار المسابقة */
+        .competition-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 2px solid var(--light-2);
+        }
+        
+        .competition-buttons .btn {
+            width: 100%;
+        }
+        
+        .btn {
+            padding: 20px 24px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            min-height: 65px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(26, 95, 122, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--light);
+            color: var(--dark);
+            border: 2px solid var(--light-3);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(255, 158, 0, 0.3);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(135deg, var(--danger), var(--danger-light));
+            color: var(--white);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* شاشة المسابقة */
+        .game-header {
+            padding: 20px 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-2);
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .current-player {
+            text-align: center;
+            background: var(--light);
+            padding: 15px;
+            border-radius: var(--radius);
+            border: 2px solid var(--primary);
+        }
+        
+        .current-player h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .current-player .player-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        
+        .game-info {
+            text-align: center;
+        }
+        
+        .game-info h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .game-info .round-info {
+            color: var(--dark-3);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .game-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+        .game-stat {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 15px 10px;
+            text-align: center;
+        }
+        
+        .game-stat .value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        
+        .game-stat .label {
+            font-size: 0.9rem;
+            color: var(--dark-3);
+            margin-top: 5px;
+        }
+        
+        .timer-container {
+            grid-column: 1 / -1;
+            width: 100%;
+            height: 12px;
+            background: var(--light-3);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        
+        .timer-bar {
+            height: 100%;
+            background: linear-gradient(135deg, var(--success), var(--success-light));
+            width: 100%;
+            transition: width 1s linear;
+            border-radius: var(--radius-full);
+        }
+        
+        .timer-bar.warning {
+            background: linear-gradient(135deg, var(--warning), var(--warning-light));
+        }
+        
+        .timer-bar.danger {
+            background: linear-gradient(135deg, var(--danger), var(--danger-light));
+        }
+        
+        .game-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0;
+        }
+        
+        .question-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .question-text {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .options-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .option-btn {
+            padding: 30px 20px;
+            background: var(--white);
+            border: 3px solid var(--light-3);
+            border-radius: var(--radius);
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            user-select: none;
+        }
+        
+        .option-btn:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        
+        .option-btn.correct {
+            background: var(--success);
+            border-color: var(--success);
+            color: var(--white);
+            animation: pulse 0.5s ease;
+            box-shadow: 0 0 20px rgba(56, 176, 0, 0.5);
+        }
+        
+        .option-btn.wrong {
+            background: var(--danger);
+            border-color: var(--danger);
+            color: var(--white);
+            animation: shake 0.5s ease;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        /* أزرار التحكم في المسابقة */
+        .game-controls {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .game-control-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 60px;
+            min-width: 180px;
+        }
+        
+        .pause-btn {
+            background: linear-gradient(135deg, var(--warning), var(--warning-light));
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(255, 209, 102, 0.3);
+        }
+        
+        .end-game-btn {
+            background: linear-gradient(135deg, var(--danger), var(--danger-light));
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* شاشة النتائج */
+        .results-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .results-box {
+            flex: 1;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .results-box h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .current-player-result {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: var(--radius);
+            border: 2px solid var(--primary);
+        }
+        
+        .current-player-result h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .current-player-result .player-score {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--dark);
+        }
+        
+        .results-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .result-stat {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .result-stat .value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .result-stat .label {
+            font-size: 0.95rem;
+            color: var(--dark-3);
+        }
+        
+        .grade-message {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin: 20px 0;
+            border-right: 4px solid var(--primary);
+            text-align: center;
+        }
+        
+        .grade-message p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+        }
+        
+        .results-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* شاشة التقرير النهائي */
+        .final-report {
+            padding: 20px;
+        }
+        
+        .final-report h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .final-report .subtitle {
+            text-align: center;
+            color: var(--dark-3);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .ranking-container {
+            flex: 1;
+            overflow-y: auto;
+            margin: 20px 0;
+        }
+        
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .ranking-table thead {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .ranking-table th {
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .ranking-table tbody tr {
+            border-bottom: 1px solid var(--light-2);
+            transition: var(--transition);
+        }
+        
+        .ranking-table tbody tr:hover {
+            background: var(--light);
+        }
+        
+        .ranking-table tbody tr:last-child {
+            border-bottom: none;
+        }
+        
+        .ranking-table td {
+            padding: 18px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .ranking-table .rank {
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+        
+        .ranking-table .rank-1 .rank { color: var(--gold); }
+        .ranking-table .rank-2 .rank { color: var(--silver); }
+        .ranking-table .rank-3 .rank { color: var(--bronze); }
+        
+        .ranking-table .player-name {
+            font-weight: 700;
+            color: var(--dark);
+            text-align: right;
+        }
+        
+        .ranking-table .score {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .ranking-table .percentage {
+            font-weight: 700;
+        }
+        
+        .percentage.excellent { color: var(--success); }
+        .percentage.good { color: var(--warning); }
+        .percentage.average { color: var(--accent); }
+        .percentage.poor { color: var(--danger); }
+        
+        .report-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--light-2);
+        }
+        
+        /* شاشة الشهادة */
+        .certificate {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--certificate-bg);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            border: 15px solid var(--certificate-border);
+            position: relative;
+            margin: 0 auto;
+            font-family: 'El Messiri', 'Tajawal', serif;
+        }
+        
+        .certificate-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .certificate-header img {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .certificate-header h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .certificate-body {
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .student-name-certificate {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 900;
+            margin: 20px 0;
+            font-family: 'Amiri', serif;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(26, 95, 122, 0.1), rgba(26, 95, 122, 0.05));
+            border-radius: var(--radius);
+            border: 2px solid var(--primary);
+            display: inline-block;
+        }
+        
+        .achievement-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--dark);
+            margin: 20px 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .certificate-footer {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 30px;
+            border-top: 2px solid var(--gold);
+        }
+        
+        .signature {
+            text-align: center;
+        }
+        
+        .signature .school-name {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-top: 10px;
+            font-family: 'Amiri', serif;
+        }
+        
+        .signature .title {
+            font-size: 1rem;
+            color: var(--dark-3);
+            margin-top: 5px;
+        }
+        
+        .certificate-date {
+            font-size: 1.1rem;
+            color: var(--dark-3);
+            padding: 10px 20px;
+            background: rgba(26, 95, 122, 0.05);
+            border-radius: var(--radius);
+            display: inline-block;
+        }
+        
+        .certificate-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        /* تنسيقات عامة */
+        .page-title {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        
+        /* الكونفيتي */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            top: 0;
+            opacity: 0;
+            animation: confetti-fall 2s linear forwards;
+            z-index: 9998;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                top: -10px;
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+                transform: rotate(720deg);
+            }
+        }
+        
+        /* الإشعارات */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 400px;
+            padding: 15px 20px;
+            background: var(--white);
+            color: var(--dark);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            text-align: center;
+            font-weight: 600;
+            border-right: 5px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .notification.success {
+            background: linear-gradient(135deg, var(--success), var(--success-light));
+            color: var(--white);
+            border-right-color: var(--success-dark);
+        }
+        
+        .notification.error {
+            background: linear-gradient(135deg, var(--danger), var(--danger-light));
+            color: var(--white);
+            border-right-color: var(--danger-dark);
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* تحسينات للشاشات المتوسطة */
+        @media (max-width: 768px) {
+            .setup-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .tables-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .game-header {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .options-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .question-text {
+                font-size: 3rem;
+            }
+            
+            .option-btn {
+                min-height: 100px;
+                font-size: 2rem;
+            }
+            
+            .results-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .ranking-table th,
+            .ranking-table td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .screen {
+                min-height: 600px;
+            }
+            
+            .tables-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .question-text {
+                font-size: 2.5rem;
+            }
+            
+            .option-btn {
+                min-height: 80px;
+                font-size: 1.8rem;
+            }
+            
+            .results-buttons,
+            .report-actions,
+            .certificate-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- زر تبديل الثيم -->
+    <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي">
+        <i class="fas fa-moon"></i>
+    </button>
+    
+    <!-- حاوية الإشعارات -->
+    <div id="notification-container"></div>
+    
+    <!-- حاوية الكونفيتي -->
+    <div id="confetti-container"></div>
+    
+    <!-- الشاشات -->
+    
+    <!-- شاشة الإعدادات -->
+    <div class="screen active" id="setupScreen">
+        <div class="school-logo">
+            <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع">
+            <h1>مدارس رياض الإبداع</h1>
+            <p>مسابقة الأوائل في الضرب والقسمة</p>
+        </div>
+        
+        <div class="content-container">
+            <div class="setup-content">
+                <!-- إعدادات المسابقة -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>إعدادات المسابقة</h3>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="gameMode">نوع المسابقة</label>
+                        <select id="gameMode" class="form-control">
+                            <option value="multi">جدول الضرب فقط</option>
+                            <option value="divi">جدول القسمة فقط</option>
+                            <option value="mixed">مختلط (ضرب وقسمة)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>عدد الأسئلة لكل طالب</label>
+                        <div class="slider-container">
+                            <input type="range" class="slider" id="questionsSlider" min="5" max="30" value="10">
+                            <div class="slider-value" id="questionsValue">١٠</div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>زمن السؤال (ثانية)</label>
+                        <div class="slider-container">
+                            <input type="range" class="slider" id="timeSlider" min="5" max="30" value="15">
+                            <div class="slider-value" id="timeValue">١٥</div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>درجة السؤال الواحد</label>
+                        <div class="points-control">
+                            <button class="point-btn active" data-point="1">١</button>
+                            <button class="point-btn" data-point="2">٢</button>
+                            <button class="point-btn" data-point="3">٣</button>
+                            <button class="point-btn" data-point="4">٤</button>
+                            <button class="point-btn" data-point="5">٥</button>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label for="studentsInput">أسماء الطلاب المشاركين</label>
+                        <textarea id="studentsInput" class="form-control" 
+                                  placeholder="أدخل أسماء الطلاب، كل اسم في سطر جديد
+مثال:
+أحمد محمد
+سارة علي
+محمد حسن" rows="6"></textarea>
+                    </div>
+                </div>
+                
+                <!-- اختيار الجداول -->
+                <div class="settings-section">
+                    <div class="section-header">
+                        <i class="fas fa-th-list"></i>
+                        <h3>اختر الجداول</h3>
+                    </div>
+                    
+                    <div class="table-controls">
+                        <button class="control-btn select-all" id="selectAllBtn">
+                            <i class="fas fa-check-circle"></i>
+                            اختيار الكل
+                        </button>
+                        <button class="control-btn deselect-all" id="deselectAllBtn">
+                            <i class="fas fa-times-circle"></i>
+                            إلغاء الكل
+                        </button>
+                    </div>
+                    
+                    <div class="tables-container" id="tablesContainer">
+                        <!-- سيتم ملؤها بالجافاسكريبت -->
+                    </div>
+                    
+                    <div class="info-box">
+                        <p>
+                            <i class="fas fa-info-circle"></i>
+                            • اختر جدولاً واحداً أو أكثر<br>
+                            • الأسئلة من الأرقام ٠ إلى ١٠<br>
+                            • يمكن للمسابقة أن تستوعب أي عدد من الطلاب
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- أزرار المسابقة -->
+            <div class="competition-buttons">
+                <button class="btn btn-primary" id="startCompetitionBtn">
+                    <i class="fas fa-play-circle"></i>
+                    بدء المسابقة
+                </button>
+                <button class="btn btn-secondary" id="viewInstructionsBtn">
+                    <i class="fas fa-question-circle"></i>
+                    تعليمات المسابقة
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- شاشة المسابقة -->
+    <div class="screen" id="gameScreen">
+        <div class="school-logo">
+            <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع" style="max-width: 200px;">
+            <h2>مسابقة الأوائل</h2>
+        </div>
+        
+        <div class="content-container">
+            <div class="game-header">
+                <div class="current-player">
+                    <h3>اللاعب الحالي</h3>
+                    <div class="player-name" id="currentPlayerName">...</div>
+                </div>
+                
+                <div class="game-info">
+                    <h2>🎯 المسابقة قيد التنفيذ</h2>
+                    <div class="round-info" id="roundInfo">دور ١ من ١٠</div>
+                </div>
+                
+                <div class="game-stats">
+                    <div class="game-stat">
+                        <div class="value" id="currentScore">٠</div>
+                        <div class="label">الدرجة</div>
+                    </div>
+                    <div class="game-stat">
+                        <div class="value" id="currentQuestion">١/١٠</div>
+                        <div class="label">السؤال</div>
+                    </div>
+                    <div class="game-stat">
+                        <div class="value" id="correctCount">٠</div>
+                        <div class="label">الصحيحة</div>
+                    </div>
+                </div>
+                
+                <div class="timer-container">
+                    <div class="timer-bar" id="timerBar"></div>
+                </div>
+            </div>
+            
+            <div class="game-content">
+                <div class="question-container">
+                    <div class="question-text" id="questionText">٥ × ٧</div>
+                </div>
+                
+                <div class="options-container" id="optionsContainer">
+                    <!-- سيتم ملؤها بالجافاسكريبت -->
+                </div>
+                
+                <div class="game-controls">
+                    <button class="game-control-btn pause-btn" id="pauseGameBtn">
+                        <i class="fas fa-pause"></i>
+                        إيقاف مؤقت
+                    </button>
+                    <button class="game-control-btn end-game-btn" id="endGameBtn">
+                        <i class="fas fa-stop"></i>
+                        إنهاء الدور
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- شاشة النتائج بعد كل دور -->
+    <div class="screen" id="resultsScreen">
+        <div class="school-logo">
+            <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع" style="max-width: 200px;">
+            <h2>نتائج الدور</h2>
+        </div>
+        
+        <div class="content-container">
+            <div class="results-box">
+                <h2>🎉 نتائج المسابقة</h2>
+                
+                <div class="current-player-result">
+                    <h3>اللاعب: <span id="resultsPlayerName">...</span></h3>
+                    <div class="player-score">الدرجة النهائية: <span id="finalScore">٠</span></div>
+                </div>
+                
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <div class="value" id="finalCorrect">٠/٠</div>
+                        <div class="label">الإجابات الصحيحة</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="value" id="finalPercentage">٠٪</div>
+                        <div class="label">النسبة المئوية</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="value" id="finalTime">٠</div>
+                        <div class="label">متوسط الزمن (ث)</div>
+                    </div>
+                    <div class="result-stat">
+                        <div class="value" id="playerRank">١</div>
+                        <div class="label">الترتيب الحالي</div>
+                    </div>
+                </div>
+                
+                <div class="grade-message">
+                    <p id="gradeMessage">...</p>
+                </div>
+                
+                <div class="results-buttons">
+                    <button class="btn btn-primary" id="nextPlayerBtn">
+                        <i class="fas fa-user-arrow-right"></i>
+                        اللاعب التالي
+                    </button>
+                    <button class="btn btn-accent" id="showCertificateBtn">
+                        <i class="fas fa-award"></i>
+                        عرض الشهادة
+                    </button>
+                    <button class="btn btn-secondary" id="finalReportBtn">
+                        <i class="fas fa-chart-bar"></i>
+                        التقرير النهائي
+                    </button>
+                    <button class="btn btn-danger" id="endCompetitionBtn">
+                        <i class="fas fa-stop-circle"></i>
+                        إنهاء المسابقة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- شاشة التقرير النهائي -->
+    <div class="screen" id="finalReportScreen">
+        <div class="school-logo">
+            <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع">
+            <h1>مدارس رياض الإبداع</h1>
+            <p>التقرير النهائي للمسابقة</p>
+        </div>
+        
+        <div class="content-container">
+            <div class="final-report">
+                <h2>🏆 التقرير النهائي للمسابقة</h2>
+                <p class="subtitle">ترتيب الطلاب المشاركين بناءً على أدائهم في المسابقة</p>
+                
+                <div class="ranking-container">
+                    <table class="ranking-table" id="rankingTable">
+                        <thead>
+                            <tr>
+                                <th width="80">الترتيب</th>
+                                <th>اسم الطالب</th>
+                                <th width="120">الدرجة</th>
+                                <th width="120">الصحيحة</th>
+                                <th width="120">النسبة</th>
+                                <th width="120">متوسط الزمن</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankingTableBody">
+                            <!-- سيتم ملؤها بالجافاسكريبت -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="report-actions">
+                    <button class="btn btn-primary" id="printReportBtn">
+                        <i class="fas fa-print"></i>
+                        طباعة التقرير
+                    </button>
+                    <button class="btn btn-accent" id="saveReportBtn">
+                        <i class="fas fa-download"></i>
+                        حفظ كصورة
+                    </button>
+                    <button class="btn btn-secondary" id="newCompetitionBtn">
+                        <i class="fas fa-redo"></i>
+                        مسابقة جديدة
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- شاشة الشهادة -->
+    <div class="screen" id="certificateScreen">
+        <div class="content-container">
+            <div class="certificate" id="certificateToSave">
+                <div class="certificate-header">
+                    <img src="https://www.wzufa.com/wp-content/uploads/2022/07/Riyadh-Al-Ebdaa-Schools.png" alt="شعار مدارس رياض الإبداع">
+                    <h2>🎖️ شهادة تقدير 🎖️</h2>
+                    <p>مدارس رياض الإبداع</p>
+                </div>
+                
+                <div class="certificate-body">
+                    <div class="student-name-certificate" id="certificateStudentName">
+                        اسم الطالب
+                    </div>
+                    
+                    <div class="achievement-text" id="certificateAchievement">
+                        تقديراً لتميز الطالب في إتقان جداول الضرب والقسمة<br>
+                        وحل المسائل الحسابية بدقة وسرعة متناهية<br>
+                        في مسابقة الأوائل التي نظمتها مدارس رياض الإبداع
+                    </div>
+                    
+                    <div class="certificate-date" id="certificateDate">
+                        تم إصدار الشهادة بتاريخ: <span id="certificateDateText">١٤٤٥/٠٠/٠٠</span>
+                    </div>
+                </div>
+                
+                <div class="certificate-footer">
+                    <div class="signature">
+                        <div class="school-name">مدارس رياض الإبداع</div>
+                        <div class="title">مشرفة المسابقة</div>
+                    </div>
+                    
+                    <div class="signature">
+                        <div class="school-name">مدير المدرسة</div>
+                        <div class="title">التوقيع</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certificate-buttons">
+                <button class="btn btn-primary" id="saveCertificateBtn">
+                    <i class="fas fa-download"></i>
+                    حفظ الشهادة كصورة
+                </button>
+                <button class="btn btn-secondary" id="backToResultsBtn">
+                    <i class="fas fa-arrow-right"></i>
+                    العودة للنتائج
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ===== JavaScript ===== -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        // ===== تهيئة التطبيق =====
+        class MathCompetitionApp {
+            constructor() {
+                this.config = {
+                    mode: 'multi',
+                    questions: 10,
+                    timeLimit: 15,
+                    pointsPerQuestion: 1,
+                    selectedTables: [2, 3, 4, 5],
+                    students: []
+                };
+                
+                this.currentGame = {
+                    playerIndex: 0,
+                    players: [],
+                    currentPlayer: null,
+                    index: 0,
+                    score: 0,
+                    correct: 0,
+                    totalTime: 0,
+                    timer: null,
+                    timeLeft: 15,
+                    questions: [],
+                    questionHistory: [],
+                    startTime: null,
+                    isPaused: false
+                };
+                
+                this.sessionResults = [];
+                this.currentCertificate = null;
+                this.soundEnabled = true;
+                this.init();
+            }
+            
+            init() {
+                this.loadTheme();
+                this.initElements();
+                this.initTables();
+                this.initEventListeners();
+                this.updateStats();
+            }
+            
+            // ===== إدارة الثيم =====
+            loadTheme() {
+                const isDark = localStorage.getItem('darkMode') === 'true';
+                if (isDark) {
+                    document.body.classList.add('dark-mode');
+                    this.updateThemeIcon(true);
+                }
+            }
+            
+            toggleTheme() {
+                const isDark = document.body.classList.toggle('dark-mode');
+                localStorage.setItem('darkMode', isDark);
+                this.updateThemeIcon(isDark);
+            }
+            
+            updateThemeIcon(isDark) {
+                const icon = document.querySelector('#themeToggle i');
+                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            }
+            
+            // ===== التحويل للأرقام الهندية =====
+            toHindi(number) {
+                return number.toString().replace(/\d/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
+            }
+            
+            // ===== إدارة الشاشات =====
+            showScreen(screenId) {
+                document.querySelectorAll('.screen').forEach(screen => {
+                    screen.classList.remove('active');
+                });
+                
+                const screen = document.getElementById(screenId);
+                if (screen) {
+                    screen.classList.add('active');
+                    
+                    switch(screenId) {
+                        case 'setupScreen':
+                            setTimeout(() => {
+                                document.getElementById('studentsInput').focus();
+                            }, 100);
+                            break;
+                        case 'finalReportScreen':
+                            this.updateFinalReport();
+                            break;
+                    }
+                }
+            }
+            
+            // ===== تهيئة العناصر =====
+            initElements() {
+                this.updateSliderValue('questionsSlider', 'questionsValue');
+                this.updateSliderValue('timeSlider', 'timeValue');
+                
+                document.getElementById('gameMode').value = this.config.mode;
+                document.getElementById('questionsSlider').value = this.config.questions;
+                document.getElementById('timeSlider').value = this.config.timeLimit;
+            }
+            
+            initTables() {
+                const container = document.getElementById('tablesContainer');
+                container.innerHTML = '';
+                
+                for (let i = 0; i <= 12; i++) {
+                    const button = document.createElement('button');
+                    button.className = 'table-btn';
+                    button.textContent = this.toHindi(i);
+                    button.dataset.table = i;
+                    
+                    if (this.config.selectedTables.includes(i)) {
+                        button.classList.add('selected');
+                    }
+                    
+                    button.addEventListener('click', () => {
+                        this.toggleTable(i);
+                    });
+                    container.appendChild(button);
+                }
+            }
+            
+            toggleTable(table) {
+                const index = this.config.selectedTables.indexOf(table);
+                
+                if (index > -1) {
+                    if (this.config.selectedTables.length <= 1) {
+                        this.showNotification('يجب اختيار جدول واحد على الأقل', 'error');
+                        return;
+                    }
+                    this.config.selectedTables.splice(index, 1);
+                } else {
+                    this.config.selectedTables.push(table);
+                }
+                
+                this.initTables();
+            }
+            
+            selectAllTables() {
+                this.config.selectedTables = Array.from({length: 13}, (_, i) => i);
+                this.initTables();
+                this.showNotification('تم اختيار جميع الجداول', 'success');
+            }
+            
+            deselectAllTables() {
+                if (this.config.selectedTables.length <= 1) {
+                    this.showNotification('يجب اختيار جدول واحد على الأقل', 'error');
+                    return;
+                }
+                
+                this.config.selectedTables = [2];
+                this.initTables();
+                this.showNotification('تم إلغاء اختيار الجداول', 'success');
+            }
+            
+            // ===== إدارة الإشعارات =====
+            showNotification(message, type = 'info') {
+                const container = document.getElementById('notification-container');
+                container.innerHTML = '';
+                
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                
+                let icon = 'info-circle';
+                if (type === 'success') icon = 'check-circle';
+                if (type === 'error') icon = 'exclamation-circle';
+                
+                notification.innerHTML = `
+                    <i class="fas fa-${icon}"></i>
+                    <span>${message}</span>
+                `;
+                
+                container.appendChild(notification);
+                
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 3000);
+            }
+            
+            // ===== الكونفيتي =====
+            createConfetti() {
+                const container = document.getElementById('confetti-container');
+                const colors = ['#1a5f7a', '#57cc99', '#ff9e00', '#ff6b6b', '#ffd166', '#D4AF37'];
+                
+                container.innerHTML = '';
+                
+                for (let i = 0; i < 30; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${Math.random() * 10 + 5}px`;
+                    confetti.style.height = confetti.style.width;
+                    confetti.style.animationDelay = `${Math.random() * 0.5}s`;
+                    
+                    container.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        if (confetti.parentNode) {
+                            confetti.remove();
+                        }
+                    }, 2000);
+                }
+            }
+            
+            // ===== تحديث القيم =====
+            updateSliderValue(sliderId, valueId) {
+                const slider = document.getElementById(sliderId);
+                const value = document.getElementById(valueId);
+                
+                if (slider && value) {
+                    const updateValue = () => {
+                        const val = parseInt(slider.value);
+                        value.textContent = this.toHindi(val);
+                        
+                        if (sliderId === 'questionsSlider') {
+                            this.config.questions = val;
+                        } else if (sliderId === 'timeSlider') {
+                            this.config.timeLimit = val;
+                        }
+                    };
+                    
+                    slider.addEventListener('input', updateValue);
+                    updateValue();
+                }
+            }
+            
+            updateStats() {
+                // يمكن إضافة إحصائيات هنا
+            }
+            
+            // ===== توليد الأسئلة =====
+            generateQuestions() {
+                const questions = [];
+                const tables = this.config.selectedTables;
+                const mode = this.config.mode;
+                
+                const allQuestions = [];
+                
+                for (const table of tables) {
+                    for (let i = 0; i <= 10; i++) {
+                        if (mode === 'multi' || mode === 'mixed') {
+                            allQuestions.push({
+                                type: 'multi',
+                                text: `${this.toHindi(table)} × ${this.toHindi(i)}`,
+                                answer: table * i,
+                                table: table,
+                                num: i
+                            });
+                        }
+                        
+                        if (mode === 'divi' || mode === 'mixed') {
+                            const result = table * i;
+                            if (table !== 0 && i !== 0) {
+                                allQuestions.push({
+                                    type: 'divi',
+                                    text: `${this.toHindi(result)} ÷ ${this.toHindi(table)}`,
+                                    answer: i,
+                                    table: table,
+                                    num: i
+                                });
+                            }
+                        }
+                    }
+                }
+                
+                const shuffled = this.shuffleArray([...allQuestions]);
+                return shuffled.slice(0, this.config.questions);
+            }
+            
+            shuffleArray(array) {
+                const newArray = [...array];
+                for (let i = newArray.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+                }
+                return newArray;
+            }
+            
+            generateOptions(correctAnswer) {
+                const options = new Set([correctAnswer]);
+                
+                while (options.size < 4) {
+                    let wrongAnswer;
+                    const offset = Math.floor(Math.random() * 10) + 1;
+                    const direction = Math.random() > 0.5 ? 1 : -1;
+                    wrongAnswer = correctAnswer + (offset * direction);
+                    
+                    if (wrongAnswer < 0) wrongAnswer = Math.abs(correctAnswer) + offset;
+                    if (wrongAnswer > 100) wrongAnswer = Math.max(0, correctAnswer - offset);
+                    
+                    options.add(wrongAnswer);
+                }
+                
+                return this.shuffleArray([...options]);
+            }
+            
+            // ===== إدارة المسابقة مع عدة طلاب =====
+            startCompetition() {
+                const studentsInput = document.getElementById('studentsInput');
+                const studentNames = studentsInput.value.trim()
+                    .split('\n')
+                    .map(name => name.trim())
+                    .filter(name => name.length > 0);
+                
+                if (studentNames.length === 0) {
+                    this.showNotification('الرجاء إدخال أسماء الطلاب', 'error');
+                    studentsInput.focus();
+                    return;
+                }
+                
+                if (this.config.selectedTables.length === 0) {
+                    this.showNotification('الرجاء اختيار جدول واحد على الأقل', 'error');
+                    return;
+                }
+                
+                // تهيئة قائمة اللاعبين مع خلطهم عشوائياً
+                this.currentGame.players = studentNames.map(name => ({
+                    name: name,
+                    score: 0,
+                    correct: 0,
+                    total: this.config.questions,
+                    time: 0,
+                    percentage: 0,
+                    questions: [],
+                    startTime: null,
+                    finished: false
+                }));
+                
+                // خلط اللاعبين عشوائياً
+                this.currentGame.players = this.shuffleArray(this.currentGame.players);
+                this.currentGame.playerIndex = 0;
+                this.sessionResults = [];
+                
+                // بدء المسابقة للاعب الأول
+                this.startNextPlayer();
+            }
+            
+            startNextPlayer() {
+                if (this.currentGame.playerIndex >= this.currentGame.players.length) {
+                    // جميع اللاعبين انتهوا، عرض التقرير النهائي
+                    this.showScreen('finalReportScreen');
+                    return;
+                }
+                
+                this.currentGame.currentPlayer = this.currentGame.players[this.currentGame.playerIndex];
+                this.currentGame.index = 0;
+                this.currentGame.score = 0;
+                this.currentGame.correct = 0;
+                this.currentGame.totalTime = 0;
+                this.currentGame.timeLeft = this.config.timeLimit;
+                this.currentGame.questions = this.generateQuestions();
+                this.currentGame.questionHistory = [];
+                this.currentGame.startTime = Date.now();
+                this.currentGame.isPaused = false;
+                
+                // عرض شاشة المسابقة
+                this.showScreen('gameScreen');
+                document.getElementById('currentPlayerName').textContent = this.currentGame.currentPlayer.name;
+                document.getElementById('roundInfo').textContent = 
+                    `دور ${this.toHindi(this.currentGame.playerIndex + 1)} من ${this.toHindi(this.currentGame.players.length)}`;
+                
+                // تحديث زر الإيقاف المؤقت
+                const pauseBtn = document.getElementById('pauseGameBtn');
+                pauseBtn.innerHTML = '<i class="fas fa-pause"></i> إيقاف مؤقت';
+                pauseBtn.disabled = false;
+                
+                // بدء السؤال الأول
+                this.startQuestion();
+            }
+            
+            startQuestion() {
+                if (this.currentGame.timer) {
+                    clearInterval(this.currentGame.timer);
+                    this.currentGame.timer = null;
+                }
+                
+                const question = this.currentGame.questions[this.currentGame.index];
+                if (!question) {
+                    this.finishPlayer();
+                    return;
+                }
+                
+                // تحديث الإحصائيات
+                document.getElementById('currentScore').textContent = this.toHindi(this.currentGame.score);
+                document.getElementById('currentQuestion').textContent = 
+                    `${this.toHindi(this.currentGame.index + 1)}/${this.toHindi(this.config.questions)}`;
+                document.getElementById('correctCount').textContent = this.toHindi(this.currentGame.correct);
+                
+                // عرض السؤال
+                document.getElementById('questionText').textContent = question.text;
+                
+                // توليد وعرض الخيارات
+                const options = this.generateOptions(question.answer);
+                this.displayOptions(options, question.answer);
+                
+                // بدء العداد
+                this.currentGame.timeLeft = this.config.timeLimit;
+                this.updateTimer();
+                
+                this.currentGame.timer = setInterval(() => {
+                    if (!this.currentGame.isPaused) {
+                        this.currentGame.timeLeft--;
+                        this.updateTimer();
+                        
+                        if (this.currentGame.timeLeft === 5) {
+                            // تنبيه صوتي مرئي
+                            document.getElementById('timerBar').style.animation = 'pulse 1s infinite';
+                        }
+                        
+                        if (this.currentGame.timeLeft <= 0) {
+                            this.handleTimeUp(question);
+                        }
+                    }
+                }, 1000);
+            }
+            
+            displayOptions(options, correctAnswer) {
+                const container = document.getElementById('optionsContainer');
+                container.innerHTML = '';
+                
+                options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.className = 'option-btn';
+                    button.textContent = this.toHindi(option);
+                    button.dataset.value = option;
+                    
+                    button.addEventListener('click', () => {
+                        this.checkAnswer(option, correctAnswer);
+                    });
+                    
+                    container.appendChild(button);
+                });
+            }
+            
+            updateTimer() {
+                const timerBar = document.getElementById('timerBar');
+                const percentage = (this.currentGame.timeLeft / this.config.timeLimit) * 100;
+                
+                timerBar.style.width = `${percentage}%`;
+                
+                if (this.currentGame.timeLeft <= 5) {
+                    timerBar.className = 'timer-bar danger';
+                } else if (this.currentGame.timeLeft <= 10) {
+                    timerBar.className = 'timer-bar warning';
+                } else {
+                    timerBar.className = 'timer-bar';
+                    timerBar.style.animation = 'none';
+                }
+            }
+            
+            handleTimeUp(question) {
+                if (this.currentGame.timer) {
+                    clearInterval(this.currentGame.timer);
+                    this.currentGame.timer = null;
+                }
+                
+                // تسجيل الإجابة الخاطئة
+                this.currentGame.questionHistory.push({
+                    question: question.text,
+                    correctAnswer: question.answer,
+                    userAnswer: null,
+                    isCorrect: false,
+                    timeSpent: this.config.timeLimit
+                });
+                
+                this.showNotification('انتهى الوقت!', 'error');
+                this.nextQuestion();
+            }
+            
+            togglePause() {
+                this.currentGame.isPaused = !this.currentGame.isPaused;
+                const pauseBtn = document.getElementById('pauseGameBtn');
+                
+                if (this.currentGame.isPaused) {
+                    pauseBtn.innerHTML = '<i class="fas fa-play"></i> استئناف';
+                    this.showNotification('تم إيقاف المسابقة مؤقتاً', 'info');
+                } else {
+                    pauseBtn.innerHTML = '<i class="fas fa-pause"></i> إيقاف مؤقت';
+                    this.showNotification('تم استئناف المسابقة', 'success');
+                }
+            }
+            
+            checkAnswer(selectedAnswer, correctAnswer) {
+                if (this.currentGame.isPaused) {
+                    this.currentGame.isPaused = false;
+                    const pauseBtn = document.getElementById('pauseGameBtn');
+                    pauseBtn.innerHTML = '<i class="fas fa-pause"></i> إيقاف مؤقت';
+                }
+                
+                if (this.currentGame.timer) {
+                    clearInterval(this.currentGame.timer);
+                    this.currentGame.timer = null;
+                }
+                
+                const question = this.currentGame.questions[this.currentGame.index];
+                const timeSpent = this.config.timeLimit - this.currentGame.timeLeft;
+                const isCorrect = selectedAnswer === correctAnswer;
+                
+                // تحديث الدرجات
+                if (isCorrect) {
+                    let points = this.config.pointsPerQuestion;
+                    
+                    // مكافأة السرعة
+                    if (timeSpent < 5) points += 1;
+                    if (timeSpent < 2) points += 1;
+                    
+                    this.currentGame.score += points;
+                    this.currentGame.correct++;
+                    
+                    this.showNotification(`إجابة صحيحة! +${points} نقطة`, 'success');
+                    
+                    // احتفال
+                    if (points > this.config.pointsPerQuestion) {
+                        this.createConfetti();
+                    }
+                } else {
+                    this.showNotification('إجابة خاطئة', 'error');
+                }
+                
+                // تسجيل التاريخ
+                this.currentGame.questionHistory.push({
+                    question: question.text,
+                    correctAnswer: question.answer,
+                    userAnswer: selectedAnswer,
+                    isCorrect: isCorrect,
+                    timeSpent: timeSpent
+                });
+                
+                // عرض الإجابة الصحيحة
+                this.highlightAnswer(isCorrect, selectedAnswer, correctAnswer);
+                
+                // الانتقال للسؤال التالي بعد تأخير
+                setTimeout(() => {
+                    this.nextQuestion();
+                }, isCorrect ? 1000 : 2000);
+            }
+            
+            highlightAnswer(isCorrect, selectedAnswer, correctAnswer) {
+                const options = document.querySelectorAll('.option-btn');
+                
+                options.forEach(option => {
+                    const value = parseInt(option.dataset.value);
+                    
+                    if (value === correctAnswer) {
+                        option.classList.add('correct');
+                    } else if (value === selectedAnswer && !isCorrect) {
+                        option.classList.add('wrong');
+                    }
+                    
+                    option.style.pointerEvents = 'none';
+                });
+            }
+            
+            nextQuestion() {
+                this.currentGame.index++;
+                this.currentGame.totalTime += (this.config.timeLimit - this.currentGame.timeLeft);
+                
+                if (this.currentGame.index < this.config.questions) {
+                    this.startQuestion();
+                } else {
+                    this.finishPlayer();
+                }
+            }
+            
+            finishPlayer() {
+                if (this.currentGame.timer) {
+                    clearInterval(this.currentGame.timer);
+                    this.currentGame.timer = null;
+                }
+                
+                const totalTime = Math.floor((Date.now() - this.currentGame.startTime) / 1000);
+                const avgTime = Math.round(this.currentGame.totalTime / this.config.questions);
+                const percentage = Math.round((this.currentGame.correct / this.config.questions) * 100);
+                
+                // حفظ نتيجة اللاعب الحالي
+                this.currentGame.currentPlayer.score = this.currentGame.score;
+                this.currentGame.currentPlayer.correct = this.currentGame.correct;
+                this.currentGame.currentPlayer.time = avgTime;
+                this.currentGame.currentPlayer.percentage = percentage;
+                this.currentGame.currentPlayer.questions = [...this.currentGame.questionHistory];
+                this.currentGame.currentPlayer.finished = true;
+                
+                // إضافة للنتائج العامة
+                this.sessionResults.push({
+                    name: this.currentGame.currentPlayer.name,
+                    score: this.currentGame.score,
+                    correct: this.currentGame.correct,
+                    total: this.config.questions,
+                    time: avgTime,
+                    percentage: percentage,
+                    date: new Date().toLocaleDateString('ar-SA'),
+                    timestamp: new Date().toISOString()
+                });
+                
+                // عرض نتائج اللاعب الحالي
+                this.showPlayerResults();
+            }
+            
+            showPlayerResults() {
+                const player = this.currentGame.currentPlayer;
+                
+                this.showScreen('resultsScreen');
+                
+                document.getElementById('resultsPlayerName').textContent = player.name;
+                document.getElementById('finalScore').textContent = this.toHindi(player.score);
+                document.getElementById('finalCorrect').textContent = 
+                    `${this.toHindi(player.correct)}/${this.toHindi(this.config.questions)}`;
+                document.getElementById('finalPercentage').textContent = `${this.toHindi(player.percentage)}٪`;
+                document.getElementById('finalTime').textContent = this.toHindi(player.time);
+                
+                // حساب الترتيب الحالي
+                const sortedResults = [...this.sessionResults].sort((a, b) => b.score - a.score);
+                const currentRank = sortedResults.findIndex(r => r.name === player.name) + 1;
+                document.getElementById('playerRank').textContent = this.toHindi(currentRank);
+                
+                // رسالة التقييم
+                const gradeMessage = document.getElementById('gradeMessage');
+                let message;
+                
+                if (player.percentage >= 90) {
+                    message = 'ممتاز! أداء رائع، استمر في التميز';
+                } else if (player.percentage >= 70) {
+                    message = 'جيد جداً، يمكنك التحسن أكثر بالممارسة';
+                } else if (player.percentage >= 50) {
+                    message = 'مقبول، تحتاج للمزيد من التدريب';
+                } else {
+                    message = 'حاول مرة أخرى، لا تستسلم! التكرار هو أفضل معلم';
+                }
+                
+                gradeMessage.textContent = message;
+                
+                // إعداد الشهادة للاعب الحالي
+                this.currentCertificate = {
+                    studentName: player.name,
+                    score: player.score,
+                    percentage: player.percentage,
+                    date: new Date().toLocaleDateString('ar-SA', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    })
+                };
+            }
+            
+            moveToNextPlayer() {
+                this.currentGame.playerIndex++;
+                if (this.currentGame.playerIndex < this.currentGame.players.length) {
+                    this.startNextPlayer();
+                } else {
+                    this.showScreen('finalReportScreen');
+                }
+            }
+            
+            // ===== التقرير النهائي =====
+            updateFinalReport() {
+                const tableBody = document.getElementById('rankingTableBody');
+                tableBody.innerHTML = '';
+                
+                if (this.sessionResults.length === 0) {
+                    tableBody.innerHTML = `
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 40px; color: var(--dark-3);">
+                                <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 15px; opacity: 0.5;"></i>
+                                <h3 style="margin-bottom: 10px;">لا توجد نتائج لعرضها</h3>
+                                <p>سيظهر هنا التقرير النهائي بعد إجراء المسابقة</p>
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+                
+                // ترتيب النتائج حسب الدرجة ثم النسبة ثم الزمن
+                const sortedResults = [...this.sessionResults].sort((a, b) => {
+                    if (b.score !== a.score) return b.score - a.score;
+                    if (b.percentage !== a.percentage) return b.percentage - a.percentage;
+                    return a.time - b.time;
+                });
+                
+                sortedResults.forEach((result, index) => {
+                    const rank = index + 1;
+                    const rankClass = rank <= 3 ? `rank-${rank}` : '';
+                    let percentageClass = '';
+                    
+                    if (result.percentage >= 90) percentageClass = 'excellent';
+                    else if (result.percentage >= 70) percentageClass = 'good';
+                    else if (result.percentage >= 50) percentageClass = 'average';
+                    else percentageClass = 'poor';
+                    
+                    const row = document.createElement('tr');
+                    row.className = rankClass;
+                    
+                    row.innerHTML = `
+                        <td class="rank">
+                            ${rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : this.toHindi(rank)}
+                        </td>
+                        <td class="player-name">${result.name}</td>
+                        <td class="score">${this.toHindi(result.score)}</td>
+                        <td>${this.toHindi(result.correct)}/${this.toHindi(result.total)}</td>
+                        <td class="percentage ${percentageClass}">${this.toHindi(result.percentage)}٪</td>
+                        <td>${this.toHindi(result.time)} ث</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+            }
+            
+            // ===== الشهادة =====
+            showCertificate() {
+                if (!this.currentCertificate) {
+                    this.showNotification('لا توجد بيانات للشهادة', 'error');
+                    return;
+                }
+                
+                this.showScreen('certificateScreen');
+                
+                document.getElementById('certificateStudentName').textContent = 
+                    this.currentCertificate.studentName;
+                
+                document.getElementById('certificateAchievement').innerHTML = `
+                    تقديراً لتميز الطالب <strong>${this.currentCertificate.studentName}</strong><br>
+                    في إتقان جداول الضرب والقسمة وحل المسائل الحسابية<br>
+                    وتمكنه من الإجابة الصحيحة بسرعة ودقة متناهية<br>
+                    حيث حصل على ${this.toHindi(this.currentCertificate.score)} نقطة 
+                    بنسبة ${this.toHindi(this.currentCertificate.percentage)}٪
+                `;
+                
+                document.getElementById('certificateDateText').textContent = this.currentCertificate.date;
+            }
+            
+            saveCertificateAsImage() {
+                const certificateElement = document.getElementById('certificateToSave');
+                
+                if (!certificateElement) {
+                    this.showNotification('تعذر العثور على الشهادة', 'error');
+                    return;
+                }
+                
+                if (typeof html2canvas === 'undefined') {
+                    this.showNotification('تعذر تحميل أداة حفظ الصورة', 'error');
+                    return;
+                }
+                
+                this.showNotification('جاري حفظ الشهادة كصورة...', 'info');
+                
+                html2canvas(certificateElement, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: null,
+                    logging: false,
+                    allowTaint: true
+                }).then(canvas => {
+                    const image = canvas.toDataURL('image/png', 1.0);
+                    const link = document.createElement('a');
+                    const studentName = this.currentCertificate?.studentName || 'تقدير';
+                    const safeName = studentName.replace(/[^\w\u0600-\u06FF]/g, '_');
+                    link.download = `شهادة_${safeName}.png`;
+                    link.href = image;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    this.showNotification('تم حفظ الشهادة كصورة بنجاح', 'success');
+                }).catch(error => {
+                    console.error('Error saving certificate:', error);
+                    this.showNotification('تعذر حفظ الشهادة كصورة', 'error');
+                });
+            }
+            
+            saveReportAsImage() {
+                const reportElement = document.querySelector('.final-report');
+                
+                if (!reportElement) {
+                    this.showNotification('تعذر العثور على التقرير', 'error');
+                    return;
+                }
+                
+                if (typeof html2canvas === 'undefined') {
+                    this.showNotification('تعذر تحميل أداة حفظ الصورة', 'error');
+                    return;
+                }
+                
+                this.showNotification('جاري حفظ التقرير كصورة...', 'info');
+                
+                html2canvas(reportElement, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: null,
+                    logging: false,
+                    allowTaint: true
+                }).then(canvas => {
+                    const image = canvas.toDataURL('image/png', 1.0);
+                    const link = document.createElement('a');
+                    link.download = `تقرير_المسابقة_${new Date().toISOString().slice(0,10)}.png`;
+                    link.href = image;
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    this.showNotification('تم حفظ التقرير كصورة بنجاح', 'success');
+                }).catch(error => {
+                    console.error('Error saving report:', error);
+                    this.showNotification('تعذر حفظ التقرير كصورة', 'error');
+                });
+            }
+            
+            printReport() {
+                window.print();
+            }
+            
+            // ===== المستمعون =====
+            initEventListeners() {
+                // تبديل الثيم
+                document.getElementById('themeToggle').addEventListener('click', () => this.toggleTheme());
+                
+                // تحديث قيم المنزلقات
+                this.updateSliderValue('questionsSlider', 'questionsValue');
+                this.updateSliderValue('timeSlider', 'timeValue');
+                
+                // تحديث نوع المسابقة
+                document.getElementById('gameMode').addEventListener('change', (e) => {
+                    this.config.mode = e.target.value;
+                });
+                
+                // أزرار الدرجات
+                document.querySelectorAll('.point-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const points = parseInt(btn.dataset.point);
+                        this.config.pointsPerQuestion = points;
+                        
+                        document.querySelectorAll('.point-btn').forEach(b => {
+                            b.classList.remove('active');
+                        });
+                        btn.classList.add('active');
+                    });
+                });
+                
+                // أزرار التحكم في الجداول
+                document.getElementById('selectAllBtn').addEventListener('click', () => this.selectAllTables());
+                document.getElementById('deselectAllBtn').addEventListener('click', () => this.deselectAllTables());
+                
+                // أزرار الشاشات الرئيسية
+                document.getElementById('startCompetitionBtn').addEventListener('click', () => this.startCompetition());
+                
+                document.getElementById('viewInstructionsBtn').addEventListener('click', () => {
+                    alert(`تعليمات المسابقة:
+1. أدخل أسماء جميع الطلاب المشاركين (كل اسم في سطر جديد)
+2. اختر الجداول المراد اختبار الطلاب فيها
+3. اضبط إعدادات المسابقة حسب الرغبة
+4. اضغط على "بدء المسابقة"
+5. سيتم اختيار الطلاب عشوائياً للمشاركة
+6. بعد انتهاء كل طالب، اضغط على "اللاعب التالي"
+7. بعد انتهاء جميع الطلاب، سيظهر التقرير النهائي`);
+                });
+                
+                // شاشة المسابقة
+                document.getElementById('endGameBtn').addEventListener('click', () => {
+                    if (confirm('هل تريد إنهاء دور اللاعب الحالي؟')) {
+                        this.finishPlayer();
+                    }
+                });
+                
+                document.getElementById('pauseGameBtn').addEventListener('click', () => this.togglePause());
+                
+                // شاشة النتائج
+                document.getElementById('nextPlayerBtn').addEventListener('click', () => this.moveToNextPlayer());
+                
+                document.getElementById('showCertificateBtn').addEventListener('click', () => this.showCertificate());
+                
+                document.getElementById('finalReportBtn').addEventListener('click', () => {
+                    this.showScreen('finalReportScreen');
+                });
+                
+                document.getElementById('endCompetitionBtn').addEventListener('click', () => {
+                    if (confirm('هل تريد إنهاء المسابقة والعودة للرئيسية؟')) {
+                        this.showScreen('setupScreen');
+                    }
+                });
+                
+                // شاشة الشهادة
+                document.getElementById('saveCertificateBtn').addEventListener('click', () => this.saveCertificateAsImage());
+                
+                document.getElementById('backToResultsBtn').addEventListener('click', () => {
+                    this.showScreen('resultsScreen');
+                });
+                
+                // شاشة التقرير النهائي
+                document.getElementById('printReportBtn').addEventListener('click', () => this.printReport());
+                
+                document.getElementById('saveReportBtn').addEventListener('click', () => this.saveReportAsImage());
+                
+                document.getElementById('newCompetitionBtn').addEventListener('click', () => {
+                    this.showScreen('setupScreen');
+                });
+            }
+        }
+        
+        // ===== بدء التطبيق =====
+        document.addEventListener('DOMContentLoaded', () => {
+            const app = new MathCompetitionApp();
+            window.mathCompetitionApp = app;
+        });
+    </script>
+</body>
+</html>
